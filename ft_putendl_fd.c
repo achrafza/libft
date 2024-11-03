@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: azahid <azahid@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/03 00:52:04 by azahid            #+#    #+#             */
+/*   Updated: 2024/11/03 06:53:07 by azahid           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)
 	{
-		ft_putchar_fd(*s,1);
+		ft_putchar_fd(*s, fd);
 		s++;
 	}
 	write(fd, "\n", 1);

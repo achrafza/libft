@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memse.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahid <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: azahid <azahid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 20:23:27 by azahid            #+#    #+#             */
-/*   Updated: 2024/10/22 16:01:40 by azahid           ###   ########.fr       */
+/*   Updated: 2024/11/03 00:50:51 by azahid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-void 	*ft_memset(void *b, int c, size_t len){
-	unsigned char *str;
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*str;
 
 	str = (unsigned char *)b;
 	while (len--)
-		*(str++)=(unsigned char)c;
+		*(str++) = (unsigned char)c;
 	return (b);
 }

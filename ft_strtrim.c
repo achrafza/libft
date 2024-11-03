@@ -3,44 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahid <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: azahid <azahid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:49:29 by azahid            #+#    #+#             */
-/*   Updated: 2024/10/23 19:05:41 by azahid           ###   ########.fr       */
+/*   Updated: 2024/11/03 23:51:51 by azahid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-int ft_isset(char const *set,char c)
+static int	ft_isset(char const *set, char c)
 {
-	while(*set)
-		if(*(set++) == c)
-			return 1;
-	return 0;
+	while (*set)
+		if (*(set++) == c)
+			return (1);
+	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int c;
-	int i;
-	char *str;
-	
-	i = 0;
-	c = 0;
-	while(s1[i])
+	const char	*start;
+	const char	*end;
+	int			len;
+	char		*str;
+
+	start = s1;
+	if (!s1 || !set)
+		return (NULL);
+	len = ft_strlen(s1);
+	end = start + len - 1;
+	while (*start && ft_isset(set, *start))
 	{
-		if (!ft_isset(set,s1[i]))
-			c++;
-		i++;
+		len--;
+		start++;
 	}
-	i = 0;
-	str =(char *)malloc(sizeof(char) *(c+1));
-	while(c--)
+	while (end >= start && ft_isset(set, *end))
 	{
-		if(!ft_isset(set,*s1))
-			str[i++] = *s1;
+		len--;
+		end--;
 	}
-	str[i] = 0;
-	return str;
+	str = ft_substr(s1, -(int)(s1 - start), len);
+	return (str);
 }

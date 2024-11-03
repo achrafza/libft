@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azahid <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: azahid <azahid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:48:23 by azahid            #+#    #+#             */
-/*   Updated: 2024/10/22 15:44:35 by azahid           ###   ########.fr       */
+/*   Updated: 2024/11/03 02:51:26 by azahid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 char	*ft_strrchr(char *s, int c)
 {
-	char *temp;
+	char	*temp;
 
 	temp = NULL;
-	while (*(s++))
+	while (*s)
 	{
-		if(*s == (char)c) 
+		if (*s == (char)c)
 			temp = s;
+		s++;
 	}
-	return temp;
+	if (*s == (char)c)
+		return (s);
+	return (temp);
 }
-
