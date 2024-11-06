@@ -6,7 +6,7 @@
 /*   By: azahid <azahid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 00:52:04 by azahid            #+#    #+#             */
-/*   Updated: 2024/11/03 06:53:07 by azahid           ###   ########.fr       */
+/*   Updated: 2024/11/06 03:01:41 by azahid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s || fd < 0)
+		return ;
 	while (*s)
 	{
 		ft_putchar_fd(*s, fd);

@@ -6,11 +6,18 @@
 /*   By: azahid <azahid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:49:36 by azahid            #+#    #+#             */
-/*   Updated: 2024/11/03 03:08:03 by azahid           ###   ########.fr       */
+/*   Updated: 2024/11/05 19:04:26 by azahid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	of(int sign)
+{
+	if (sign == 1)
+		return (-1);
+	return (0);
+}
 
 static int	ft_isspace(char c)
 {
@@ -34,6 +41,10 @@ int	ft_atoi(const char	*str)
 		str++;
 	}
 	while (ft_isdigit(*str))
+	{
+		if (num > ((9223372036854775807 - (*str - '0')) / 10))
+			return (of(sign));
 		num = num * 10 + (*(str++) - '0');
+	}
 	return (num * sign);
 }
