@@ -25,11 +25,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-#main:
-#	$(CC) $(CFLAGS) main.c -L. -lft -o hello
-#rmain: fclean
-#	rm hello
 
 re : fclean all
 
-.PHONY : clean fclean re all
+.PHONY : clean

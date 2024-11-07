@@ -6,15 +6,12 @@
 /*   By: azahid <azahid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 21:47:57 by azahid            #+#    #+#             */
-/*   Updated: 2024/11/06 01:22:49 by azahid           ###   ########.fr       */
+/*   Updated: 2024/11/06 17:10:33 by azahid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# include <string.h>
-# include <stdio.h>
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -30,7 +27,7 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 char	*ft_strrchr(char *s, int c);
 char	*ft_strchr(char *s, int c);
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 int		ft_tolower(int ch);
 int		ft_toupper(int ch);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
